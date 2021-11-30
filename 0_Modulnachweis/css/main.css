@@ -1,0 +1,27 @@
+/* MAIN */
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+nav {
+    display: flex !important;
+}
+
+#container {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+input, select{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

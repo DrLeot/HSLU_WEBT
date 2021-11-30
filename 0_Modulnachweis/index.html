@@ -1,55 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Janik Burkart I.BSCI.2101">
+    <meta name="description" content="2021 WEBT Modulendprüfung">
+    <title>Digitales Kochbuch - WEBT Modulendprüfung</title>
 
     <!-- Stylesheets -->
-    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/main.css">
+
 
 </head>
 <body>
-    <h1>Das Kochbuch des Internets</h1>
-    <p> Das Kochbuch des Internets dient als Kochbuch des modernen Zeitalters.
-    Vergessen Sie die alten, staubigen Kochbücher Ihrer Oma, denn mit diesem Kochbuch
-    können Rezepte ganz einfach digital abgespeichert werden. Dazu kann hier (TODO!!!) im Formular
-    ein beliebiges Rezept erfasst werden. Rezepte, die bereits existieren, werden automatisiert aktualisiert.
-    Dabei ist der Name des Rezept der eindeutige Identifikator.
-    Falls Sie weitere Vorschläge für Kategorien haben, dürfen Sie diese gerne dem Webseitenadministrator unter
-    admin@website.com melden, danke!
-    </p>
-    <img src="img/omakocht.png" height="200px" />
-    <br><br>
+    <header>
+        <nav class="w3-top w3-bar w3-green">
+            <a class="w3-bar-item w3-button w3-mobile" href="#information">Information</a>
+            <a class="w3-bar-item w3-button w3-mobile" href="#formular">Formular</a>
+            <a class="w3-bar-item w3-button w3-mobile" href="#canvas">Canvas</a>
+        </nav>
+    </header>
+    <div id="container" class="w3-container">
+        <div class="w3-row-padding">
+            <section id="information">
+                <br><br>
+                <h1>Information - Das Kochbuch des Internets</h1>
+                <p> Das Kochbuch des Internets dient als Kochbuch des modernen Zeitalters.
+                    Vergessen Sie die alten, staubigen Kochbücher Ihrer Oma, denn mit diesem Kochbuch
+                    können Rezepte ganz einfach digital abgespeichert werden. Dazu kann <a href="#formular">hier</a> im Formular
+                    ein beliebiges Rezept erfasst werden. Rezepte, die bereits existieren, werden automatisiert aktualisiert.
+                    Dabei ist der Name des Rezept der eindeutige Identifikator.
+                    Falls Sie weitere Vorschläge für Kategorien haben, dürfen Sie diese gerne dem Webseitenadministrator unter
+                    <a href="mailto:admin@website.com">admin@website.com</a> melden, danke!
+                </p>
+                <img src="img/Omakocht.png" alt="Bild einer Oma, die kocht" height="200px" />
+            </section>
+        </div>
+        <div class="w3-row-padding">
+            <div class="w3-col m6">
+                <section id="formular">
+                    <br><br>
+                    <div class="w3-container w3-light-green">
+                        <h1>Menüs hinzufügen</h1>
+                    </div>
+                    <form class="w3-container" action="UpsertMenu.php" method="post" onsubmit="return checknumbereven()">
+                        <label for="menuname">Menüname:</label>
+                        <input class="w3-input w3-border" id="menuname" name="menuname" type="text" placeholder="Name des Menüs" required minlength="3" maxlength="100">
 
-    <canvas id="canvaslogo" width="500px" height="500px"></canvas>
-    <!-- Draw logo onto canvas -->
+                        <label for="category">Kategorie:</label>
+                        <select class="w3-select w3-border" id="category" name="category">
+                            <option value="Vorspeise">Vorspeise</option>
+                            <option value="Hauptgang">Hauptgang</option>
+                            <option value="Dessert">Dessert</option>
+                        </select><br>
+
+                        <label for="amountpeople">Anzahl Personen:</label>
+                        <input class="w3-input w3-border" id="amountpeople" name="amountpeople" type="number" min="4" max="100" value="4" placeholder="Für viele Personen ist das Menü gedacht?" required>
+
+                        <label for="email">Email-Adresse für Rückfragen:</label>
+                        <input class="w3-input w3-border" name="email" type="email" placeholder="hello@website.com" required>
+
+                        <label for="ingredients">Zutaten:</label>
+                        <textarea class="w3-input w3-border" name="ingredients" cols="20" rows="5" placeholder="Beschreibung des Menüs" required></textarea>
+
+                        <input class="w3-button w3-light-green" type="submit" value="Senden" required>
+                    </form>
+                </section>
+            </div>
+            <div class="w3-col m6">
+                <section id="canvas">
+                    <br><br>
+                    <div class="w3-container w3-light-green">
+                        <h1>Canvas - Logo</h1>
+                    </div>
+                    <canvas class="w3-container" id="canvaslogo" width="500px" height="500px">
+
+                    </canvas>
+
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+    <footer class="w3-container w3-green">
+        <p>Janik Burkart I.BSCI.2101 WEBT Modulendprüfung (2021)</p>
+    </footer>
+
+    <!-- Scripts -->
     <script src="js/drawlogo.js"></script>
+    <script src="js/inputvalidation.js"></script>
 
-    <form action="UpsertMenu.php" method="post">
-        <fieldset>
-            <legend>Menübuch</legend>
-
-            <label for="menuname">Menuname:</label>
-            <input id="menuname" name="menuname" type="text" size="20" value="" /><br>
-
-            <label for="category">Kategorie:</label>
-            <select id="category" name="category">
-                <option value="Vorspeise">Vorspeise</option>
-                <option value="Hauptgang">Hauptgang</option>
-                <option value="Dessert">Dessert</option>
-            </select><br>
-
-            <label for="amountpeople">Anzahl Personen:</label>
-            <input id="amountpeople" name="amountpeople" type="number" size="20" value="4" /><br>
-
-            <label for="ingredients">Zutaten:</label>
-            <textarea name="ingredients" cols="20" rows="5"></textarea>
-        </fieldset>
-        <fieldset>
-            <legend>Menü hinzufügen</legend>
-            <input type="submit" value="Senden"/>
-        </fieldset>
-
-    </form>
 </body>
 </html>
