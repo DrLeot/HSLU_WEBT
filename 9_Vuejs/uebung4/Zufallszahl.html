@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung 4: Zufallszahl</title>
+    <meta charset="utf8">
+    <style>
+        .rot   { color: red; }
+        .gruen { color: green; }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <!-- TODO: Jeweils nur einen der folgenden drei Absatzelemente anzeigen (entsprechend den Regeln) -->
+        <p v-if="zahl > 50" class="rot">{{ zahl }}</p>
+        <p v-if="zahl <= 50" class="gruen">{{ zahl }}</p>
+        <p v-if="!zahl">bisher noch keine Zufallszahl vorliegend.</p>
+    </div>
+
+    <button type="button" onclick="zufallszahlZeigen(1,100)">berechne Zufallszahl</button>
+    <button type="button" onclick="reset()">reset</button>
+
+    <script>
+        let obj = { zahl: undefined };
+        new Vue({ el: "#main", data: obj });
+
+        function zufallszahlZeigen(min, max) {
+	        obj.zahl = (Math.random() * (max - min)) + min;
+        }
+        function reset(){
+            obj.zahl = undefined;
+        }
+     </script>
+</body>
+
+</html>

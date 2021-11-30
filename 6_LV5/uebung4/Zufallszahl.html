@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Übung 4: Zufallszahl</title>
+    <meta charset="utf8">
+    <style>
+        .rot { color:red; }
+        .green { color:green; }
+    </style>
+
+    <script>
+    function zufallszahlZeigen(min, max) {	
+        let x = Math.floor(Math.random() * (max - min) + min);
+        // TODO: Code gemaess Aufgabe ergaenzen
+        let element = document.getElementById("zufallszahl");
+        element.className = '';
+        element.innerText = x;
+        if(x >= 50){
+            element.classList.add("rot");
+        }else{
+            element.classList.add("green");
+        }
+
+    }
+    </script>
+</head>
+<body>	
+    <p id="zufallszahl">bisher noch keine Zufallszahl vorliegend.</p>
+    <button type="button" onClick = "zufallszahlZeigen(1,100)">Berechne Zufallszahl</button>
+</body>
+</html>

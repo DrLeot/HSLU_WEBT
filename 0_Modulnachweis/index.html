@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- Stylesheets -->
+    <link href="css/main.css" rel="stylesheet">
+
+</head>
+<body>
+    <h1>Das Kochbuch des Internets</h1>
+    <p> Das Kochbuch des Internets dient als Kochbuch des modernen Zeitalters.
+    Vergessen Sie die alten, staubigen Kochbücher Ihrer Oma, denn mit diesem Kochbuch
+    können Rezepte ganz einfach digital abgespeichert werden. Dazu kann hier (TODO!!!) im Formular
+    ein beliebiges Rezept erfasst werden. Rezepte, die bereits existieren, werden automatisiert aktualisiert.
+    Dabei ist der Name des Rezept der eindeutige Identifikator.
+    Falls Sie weitere Vorschläge für Kategorien haben, dürfen Sie diese gerne dem Webseitenadministrator unter
+    admin@website.com melden, danke!
+    </p>
+    <img src="img/omakocht.png" height="200px" />
+    <br><br>
+
+    <canvas id="canvaslogo" width="500px" height="500px"></canvas>
+    <!-- Draw logo onto canvas -->
+    <script src="js/drawlogo.js"></script>
+
+    <form action="UpsertMenu.php" method="post">
+        <fieldset>
+            <legend>Menübuch</legend>
+
+            <label for="menuname">Menuname:</label>
+            <input id="menuname" name="menuname" type="text" size="20" value="" /><br>
+
+            <label for="category">Kategorie:</label>
+            <select id="category" name="category">
+                <option value="Vorspeise">Vorspeise</option>
+                <option value="Hauptgang">Hauptgang</option>
+                <option value="Dessert">Dessert</option>
+            </select><br>
+
+            <label for="amountpeople">Anzahl Personen:</label>
+            <input id="amountpeople" name="amountpeople" type="number" size="20" value="4" /><br>
+
+            <label for="ingredients">Zutaten:</label>
+            <textarea name="ingredients" cols="20" rows="5"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Menü hinzufügen</legend>
+            <input type="submit" value="Senden"/>
+        </fieldset>
+
+    </form>
+</body>
+</html>

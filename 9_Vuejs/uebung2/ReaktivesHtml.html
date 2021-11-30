@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Übung 2: Reaktives HTML mit vue.js</title>
+    <meta charset="utf8">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <form id="main">
+        <label for="name">Bitte Namen eingaben:</label>
+
+        <!-- TODO Verbindung mit obj.name -->
+        <input v-model="name" id="name">
+
+        <!-- TODO: Ausgabe von Hallo gefolgt von obj.name -->
+        <p v-if="name" id="output">Hallo {{name}}</p>
+
+    </form>
+    <script>
+        let obj = { name: "" };
+        new Vue({ el: '#main', data: obj });        
+    </script>
+</body>
+
+</html>
