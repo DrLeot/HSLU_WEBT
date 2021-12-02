@@ -45,6 +45,19 @@ function upsertMenuData($connection, $values){
             $ret = true;
         }
     }
+    if(!filter_var($values['author'], FILTER_VALIDATE_EMAIL)){
+        printWarning("Der Author muss eine E-Mail Adresse sein.");
+        $ret = true;
+    }
+    if($values['category'] != 'Vorspeise' || $values['category'] != 'Hauptgang' || $values['category'] != 'Dessert'){
+        printWarning("Die Kategorie muss einer in der Select aufgeführten Kategorien sein.");
+        $ret = true;
+    }
+    if($values['servesfor'] % 2 != 0 || $values['servesfor'] < 0){
+        printWarning("Die anzahl Personen muss eine gerade Zahl sein und soll grösse als 0 sein.");
+        $ret = true;
+    }
+
     if($ret){
         return;
     }

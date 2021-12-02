@@ -46,7 +46,7 @@
                     </div>
                     <form class="w3-container" action="UpsertMenu.php" method="post" onsubmit="return checknumbereven()">
                         <label for="menuname">Menüname:</label>
-                        <input class="w3-input w3-border" id="menuname" name="menuname" type="text" placeholder="Name des Menüs" required minlength="3" maxlength="100">
+                        <input class="w3-input w3-border" id="menuname" name="menuname" type="text" placeholder="Name des Menüs" pattern="[a-zA-Z\s]+" title="Nur Buchstaben A-Z und Leerschläge sind erlaubt." minlength="3" maxlength="100" required>
 
                         <label for="category">Kategorie:</label>
                         <select class="w3-select w3-border" id="category" name="category">
@@ -74,7 +74,7 @@
                     <div class="w3-container w3-light-green">
                         <h1>Canvas - Logo</h1>
                     </div>
-                    <canvas class="w3-container" id="canvaslogo" width="500px" height="500px">
+                    <canvas class="w3-container" id="canvaslogo" height="500px">
 
                     </canvas>
 
