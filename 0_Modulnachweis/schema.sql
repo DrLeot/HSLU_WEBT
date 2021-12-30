@@ -9,5 +9,5 @@ CREATE TABLE menu(
     menu_servesfor int not null
 );
 
-INSERT INTO menu VALUES('Toast Hawaii', 'Hauptgang','Zutaten: Toast, Schinken, Schmelzkäse, Senf, Ananasscheiben','janik.burkart@stud.hslu.ch',4);
-INSERT INTO menu VALUES('Getränkter Zitronenkuchen', 'Dessert','Zutaten: 250 gr Butter, 250g Zucker, 1 Prise Salz, 4 Eier, 5 Zitronen, 250 gr Mehl, 1 TL Backpulver, 100 gr Puderzucker','max.muster@Musterag.com',8);
+INSERT INTO menu VALUES('Toast Hawaii', 'Hauptgang','Toast, Schinken, Schmelzkäse, Senf, Ananasscheiben','janik.burkart@stud.hslu.ch',4);
+INSERT INTO menu VALUES('Getränkter Zitronenkuchen', 'Dessert','250 gr Butter, 250g Zucker, 1 Prise Salz, 4 Eier, 5 Zitronen, 250 gr Mehl, 1 TL Backpulver, 100 gr Puderzucker','max.muster@Musterag.com',8);

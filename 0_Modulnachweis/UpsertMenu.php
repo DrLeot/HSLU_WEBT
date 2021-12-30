@@ -1,7 +1,5 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-define('COOKIENAME', 'MenuCounter');
-
 function printSuccess($msg){
     echo "<p style='color:green;'>Success: ".$msg."</p>";
 }
@@ -108,14 +106,14 @@ function printAllMenus($connection){
     $sql_menu_all->execute();
     $result = $sql_menu_all->get_result();
     while ($row = $result->fetch_assoc()) {
-        echo "<h1>".$row['menu_name']."</h1>";
+        echo "<h1> Menüname: ".$row['menu_name']."</h1>";
         echo "<h5> Berechnet für ".$row['menu_servesfor']." Personen als ".$row['menu_category']."</h5>";
-        echo "<p>".$row['menu_ingredients']."</p></br>";
+        echo "<p> Zutaten: ".$row['menu_ingredients']."</p></br>";
         echo "<p> Autor: ".$row['menu_author']."</p></br>";
 
     }
 }
-
+define('COOKIENAME', 'MenuCounter');
 $DBConnection = connectDB();
 echo upsertMenuData(
     $DBConnection,
@@ -131,5 +129,4 @@ printCookie();
 echo "<a href='index.html'>Zurück zur Webseite</a>";
 printAllMenus($DBConnection);
 closeDB($DBConnection);
-
 ?>
