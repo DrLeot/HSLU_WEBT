@@ -5,12 +5,6 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-}
-
 nav a{
     transition: font-size 1s;
 }
@@ -18,7 +12,6 @@ nav a{
 nav a:hover{
     font-size: 18px;
 }
-
 
 #container {
     max-width: 1000px;

@@ -6,14 +6,15 @@ function printSuccess($msg){
     echo "<p style='color:green;'>Success: ".$msg."</p>";
 }
 function printWarning($msg){
-    echo "<p style='color:yellow;'>Warning: " .$msg."</p>";
+    echo "<p style='color:yellow;background-color:black;'>Warning: " .$msg."</p>";
 }
 function printError($msg){
     die("<p style='color:red;'>Error: " .$msg."</p>");
 }
 function printCookie(){
     if(isset($_COOKIE[COOKIENAME])){
-        echo "<p>Sie haben in den letzten 24 Stunden bereits ".$_COOKIE[COOKIENAME]." Menüs hinzugefügt oder geändert!</p>";
+        echo "<p>Sie haben in den letzten 24 Stunden bereits ".$_COOKIE[COOKIENAME]." Menüs hinzugefügt oder geändert.
+        Das ist eine tolle Leistung!</p>";
     }
 }
 function incrementCookie(){
@@ -49,12 +50,16 @@ function upsertMenuData($connection, $values){
         printWarning("Der Author muss eine E-Mail Adresse sein.");
         $ret = true;
     }
-    if($values['category'] != 'Vorspeise' || $values['category'] != 'Hauptgang' || $values['category'] != 'Dessert'){
+    if($values['category'] != 'Vorspeise' && $values['category'] != 'Hauptgang' && $values['category'] != 'Dessert'){
         printWarning("Die Kategorie muss einer in der Select aufgeführten Kategorien sein.");
         $ret = true;
     }
-    if($values['servesfor'] % 2 != 0 || $values['servesfor'] < 0){
-        printWarning("Die anzahl Personen muss eine gerade Zahl sein und soll grösse als 0 sein.");
+    if($values['servesfor'] <= 0){
+        printWarning("Die Anzahl Personen muss grösser als 0 sein");
+        $ret = true;
+    }
+    if($values['servesfor'] % 2 != 0 && $values['category'] == 'Hauptgang'){
+        printWarning("Die anzahl Personen muss eine gerade Zahl, wenn ein Hauptgang angewählt wurde.");
         $ret = true;
     }
 
