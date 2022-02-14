@@ -1,0 +1,213 @@
+
+/* MAIN */
+html {
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+#container {
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* NAVIGATION */
+nav {
+    display: flex !important;
+    justify-content: center;
+}
+
+nav a {
+    color: #e2f2f2 !important;
+    font-size: 20px;
+}
+
+nav a:hover {
+    background: #e2f2f2;
+    color: #233434;
+}
+
+/* FILLER */
+#filler {
+    outline: 0px;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    max-width: 100%; /* Fixt Problem mit horizontaler Scrollbar...*/ 
+    height: 100vh;
+}
+
+#filler > #filler-canvas {
+    outline: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+#filler-down {
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    bottom: 50px;
+    width: 150px;
+}
+
+#filler-down:hover {
+    filter: drop-shadow(0 0 10px white);
+    cursor: pointer;
+}
+
+
+/* Intro */
+#intro {
+    padding-top: 60px;
+}
+
+#intro p {
+    text-align: justify;
+}
+
+
+/* FORM */
+#form {
+    padding-top: 50px;
+}
+
+.form-header:hover {
+    cursor: pointer;
+    border-bottom: 5px solid #e2f2f2;
+}
+
+#form-headers > .active {
+    border-bottom: 5px solid #233434 !important;
+}
+
+#form-sections {
+    margin: 24px 0;
+    min-height: 300px; 
+}
+
+#form-sections > .form-section {
+    display: none;
+}
+
+#form-sections > .active {
+    display: inherit !important;
+}
+
+
+#form-sections > .active > .btnSubmit {
+    background-color: #5CBF60;
+    color: #fff;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    opacity: 0.8;
+}
+
+#form-sections > .active > .btnSubmit:hover {
+    opacity: 1;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-flex;
+    padding: 0 9px;
+    background-color: rgb(0, 127, 255);
+    color: white;
+    border-radius: 10px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 240px;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 15px 5px;
+    position: absolute;
+    z-index: 99;
+    bottom: 100%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* Game Canvas */
+#game {
+    width: 100%;
+    padding: 100px 0;
+}
+
+
+#game > #game-canvas {
+    -webkit-box-shadow: 0px 0px 0px 10px rgba(255,215,0,1);
+    -moz-box-shadow: 0px 0px 0px 10px rgba(255,215,0,1);
+    box-shadow: 0px 0px 0px 10px rgba(255,215,0,1);
+    outline: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+#highscores {
+    margin-top: 20px;
+}
+
+#highscores > table {
+    border-collapse: collapse;
+    width: 200px;
+}
+
+#highscores td, #highscores th {
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    padding: 8px;
+}
+
+#highscores .score {
+    text-align: end;
+}
+
+#highscores tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+
+/* Classes */
+
+input[type=text], input[type=password] {
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    background: #f1f1f1;
+}
+
+button:hover {
+    box-shadow: none !important;
+    background-color: #46a049!important;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 600px) {
+    nav a {
+        display: none;
+    }
+
+    nav a.icon {
+      float: right;
+      display: block;
+    }
+}

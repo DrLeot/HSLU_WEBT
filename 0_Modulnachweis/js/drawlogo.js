@@ -2,43 +2,61 @@
 let c = document.getElementById("canvaslogo");
 let ctx = c.getContext("2d");
 ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 2;
 
-    ctx.moveTo(150,450);
-    ctx.lineTo(350,450);
+    // Border top
+    ctx.moveTo(5,5);
+    ctx.lineTo(295,5);
 
-    ctx.moveTo(150,400);
-    ctx.lineTo(350,400);
+    // border bottom
+    ctx.moveTo(5,380);
+    ctx.lineTo(295,380);
 
-    ctx.moveTo(150,450);
-    ctx.lineTo(150,300);
+    // border left
+    ctx.moveTo(5,5);
+    ctx.lineTo(5,380);
 
-    ctx.moveTo(350,450);
-    ctx.lineTo(350,300);
+    // Border right
+    ctx.moveTo(295,5);
+    ctx.lineTo(295,380);
+
+    // bottom of head
+    ctx.moveTo(65,340);
+    ctx.lineTo(240,340);
+
+    ctx.moveTo(65,290);
+    ctx.lineTo(240,290);
+
+    ctx.moveTo(65,340);
+    ctx.lineTo(65,190);
+
+    ctx.moveTo(240,340);
+    ctx.lineTo(240,190);
     ctx.stroke();
 
+// bottom
 ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 2;
 
-    ctx.arc(250, 250, 60, Math.PI*0.83,0.5, true);
+    ctx.arc(150, 150, 50, Math.PI*0.83,0.5, true);
     ctx.stroke();
-
+// left
 ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 2;
 
-    ctx.arc(157, 240, 60, Math.PI*1.70,Math.PI/4, true);
+    ctx.arc(72, 140, 50, Math.PI*1.70,Math.PI/4, true);
     ctx.stroke();
-
+// top
 ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 2;
 
-    ctx.arc(250, 190, 60, 0,Math.PI, true);
+    ctx.arc(150, 98, 50, 0,Math.PI, true);
     ctx.stroke();
-
+// left
 ctx.beginPath();
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 2;
 
-    ctx.arc(347, 240, 60, Math.PI/1.28,Math.PI*1.28, true);
+    ctx.arc(232, 140, 50, Math.PI/1.28,Math.PI*1.28, true);
     ctx.stroke();
 
 ctx.closePath();
